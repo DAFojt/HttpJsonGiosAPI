@@ -1,9 +1,7 @@
 package http.json.nbp;
 
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
