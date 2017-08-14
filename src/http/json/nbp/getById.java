@@ -14,7 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class getById {
-	  public static ArrayList<String[]> getArrayListById(int id) throws IOException, JSONException
+	  public ArrayList<String[]> getArrayListById(int id) throws IOException, JSONException
 	  {
 		  	readJsonFromURL jsonReader = new readJsonFromURL();
 		  	

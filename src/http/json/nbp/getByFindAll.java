@@ -14,7 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class getByFindAll {
-	  public static ArrayList<Station> getArrayListByFindAll() throws IOException, JSONException
+	  public ArrayList<Station> getArrayListByFindAll() throws IOException, JSONException
 	  {
 		  	readJsonFromURL jsonReader = new readJsonFromURL();
 		  	
@@ -33,15 +33,17 @@ public class getByFindAll {
 				JSONObject json4 = json3.getJSONObject("commune");
 
 				Station station = new Station(!json2.isNull("id") ? json2.getInt("id") : -1,
-						!json2.isNull("stationName") ? json2.getString("stationName") : "Brak",
+						!json2.isNull("stationName") ? json2.getString("stationName") : "NULL",
 						!json2.isNull("gegrLat") ? json2.getDouble("gegrLat") : -1.0,
 						!json2.isNull("gegrLon") ? json2.getDouble("gegrLon") : -1.0,
 						!json3.isNull("id") ? json3.getInt("id") : -1,
-						!json3.isNull("name") ? json3.getString("name") : "Brak",
-						!json4.isNull("communeName") ? json4.getString("communeName") : "Brak",
-						!json4.isNull("districtName") ? json4.getString("districtName") : "Brak",
-						!json4.isNull("provinceName") ? json4.getString("provinceName") : "Brak",
-						!json2.isNull("adressStreet") ? json2.getString("addressStreet") : "Brak");
+						!json3.isNull("name") ? json3.getString("name") : "NULL",
+						!json4.isNull("communeName") ? json4.getString("communeName") : "NULL",
+						!json4.isNull("districtName") ? json4.getString("districtName") : "NULL",
+						!json4.isNull("provinceName") ? json4.getString("provinceName") : "NULL",
+						!json2.isNull("adressStreet") ? json2.getString("addressStreet") : "NULL");
+				
+						data.add(station);
 				
 				System.out.println("Stworzono stacjê o id: " + (!json3.isNull("id") ? json3.getInt("id") : -1) + ": " + (!json2.isNull("stationName") ? json2.getString("stationName") : "Brak"));
 				

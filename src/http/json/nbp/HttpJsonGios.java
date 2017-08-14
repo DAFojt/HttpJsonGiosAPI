@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 public class HttpJsonGios {
     
-    public static void main(String[] args) throws IOException, JSONException {
+    public static void main(String[] args) throws IOException, JSONException, InterruptedException {
     	
     	getById getter = new getById();
     	ArrayList<String[]> data = getter.getArrayListById(92);
@@ -26,10 +26,12 @@ public class HttpJsonGios {
     	getByFindAll getter2 = new getByFindAll();
     	ArrayList<Station> data2 = getter2.getArrayListByFindAll();
         
+    	Thread.sleep(40000);
     	EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new FrameById(data);
+                //new FrameById(data);
+                //new FrameByFindAll(data2);
             }       
         });
     }
