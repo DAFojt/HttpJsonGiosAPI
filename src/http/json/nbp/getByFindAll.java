@@ -7,23 +7,33 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class getByFindAll {
-	  public ArrayList<Station> getArrayListByFindAll() throws IOException, JSONException
-	  {
-		  	readJsonFromURL jsonReader = new readJsonFromURL();
-		  	
-		  	ArrayList<Station> data = new ArrayList<Station>();
-		  	String API_URL = "http://api.gios.gov.pl/pjp-api/rest/station/findAll";
-	        JSONArray json = readJsonFromURL.readJsonArrayFromUrl(API_URL);
-	        
-	        System.out.println(json.toString());
-	        
+	public static ArrayList<Station> getArrayListByFindAll() throws IOException, JSONException {
+		readJsonFromURL jsonReader = new readJsonFromURL();
+
+		ArrayList<Station> data = new ArrayList<Station>();
+		String API_URL = "http://api.gios.gov.pl/pjp-api/rest/station/findAll";
+		JSONArray json = readJsonFromURL.readJsonArrayFromUrl(API_URL);
+
+		System.out.println(json.toString());
+
 		for (int i = 0; i < json.length(); i++) {
 			JSONObject json2 = json.getJSONObject(i);
-			//System.out.println(json2.toString());
+			JSONObject json3 = null;
+			JSONObject json4 = null;
 
 			try {
-				JSONObject json3 = json2.getJSONObject("city");
-				JSONObject json4 = json3.getJSONObject("commune");
+				try {
+					json3 = json2.getJSONObject("city");
+					try {
+						json4 = json3.getJSONObject("commune");
+					} catch (JSONException e) {
+						System.out.println("B£¥D PRZY TWORZENIU OBIEKTU STACJI NR: " + i + " przy tworzeniu gminy");
+						continue;
+					}
+				} catch (JSONException e) {
+					System.out.println("B£¥D PRZY TWORZENIU OBIEKTU STACJI NR: " + i + " przy tworzeniu miasta");
+					continue;
+				}
 
 				Station station = new Station(!json2.isNull("id") ? json2.getInt("id") : -1,
 						!json2.isNull("stationName") ? json2.getString("stationName") : "NULL",
@@ -35,19 +45,17 @@ public class getByFindAll {
 						!json4.isNull("districtName") ? json4.getString("districtName") : "NULL",
 						!json4.isNull("provinceName") ? json4.getString("provinceName") : "NULL",
 						!json2.isNull("adressStreet") ? json2.getString("addressStreet") : "NULL");
-				
-						data.add(station);
-				
-				System.out.println("Stworzono stacjê o id: " + (!json3.isNull("id") ? json3.getInt("id") : -1) + ": " + (!json2.isNull("stationName") ? json2.getString("stationName") : "Brak"));
-				
-			} catch (JSONException e) {
-					System.out.println("B£¥D PRZY TWORZENIU OBIEKTU STACJI NR: " + i);
-			} finally {
-				
-			}
 
+				data.add(station);
+
+				System.out.println("Stworzono obiekt stacji o id: " + station.getId() + ": " + station.getStationName());
+
+			} catch (JSONException e) {
+				System.out.println("B£¥D OGÓLNY PRZY TWORZENIU OBIEKTU STACJI NR: " + i);
+				continue;
+			}
 		}
-		
-			return data;
-	  }
+
+		return data;
+	}
 }

@@ -7,16 +7,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class getById {
-	  public ArrayList<String[]> getArrayListById(int id) throws IOException, JSONException
+	  public static ArrayList<String[]> getArrayListById(int id) throws IOException, JSONException
 	  {
 		  	readJsonFromURL jsonReader = new readJsonFromURL();
 		  	
 		  	ArrayList<String[]> data = new ArrayList<String[]>();
 		  	String API_URL = "http://api.gios.gov.pl/pjp-api/rest/data/getData/" + id;
 	        JSONObject json = readJsonFromURL.readJsonFromUrl(API_URL);
-	        System.out.println(json.toString());
-	        System.out.println(json.get("values"));
-	        System.out.println(json.getJSONArray("values").length());
 	        
 	        JSONArray jsons = new JSONArray();
 	        String s[] = new String[63];
@@ -50,7 +47,7 @@ public class getById {
 					data.add(sData);
 				}
 			} else {
-				System.out.println("SYSTEM ERROR: Brak danych pomiarowych z API");
+				System.out.println("Brak danych pomiarowych dla podanego punktu pomiarowego!");
 			}
 			
 			return data;
