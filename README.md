@@ -21,3 +21,9 @@ getDataByHttp(); - Metoda służąca do pobrania wszystkich dostępnych danych p
 
 Metoda zwracająca ArrayList obiektów klasy Station wszystkich dostępnych na GIOŚ stacji pomiarowych
 GetByFindAll.getArrayListByFindAll();
+
+
+
+
+
+Przykładowe wywołanie metod API w klasie HttpJsonGios.java
