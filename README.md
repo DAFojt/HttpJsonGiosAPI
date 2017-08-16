@@ -15,6 +15,7 @@ Metody niestandardowe:
 getAllSensorsByHttp(); - Metoda pobierająca informacje o wszystkich dostępnych sensorach dla danej stacji pomiarowej zagnieżdżająca pobrane dane w klasie Stations w postaci ArrayListy obiektów klas Sensors poprzez kompozycję
 
 Sensors - Klasa przechowująca dane na temat sensora danej stacji pomiarowej, udostępniająca podstawowe metody get/set oraz metody dodatkowe
+
 Metody niestandardowe:
 
 getDataByHttp(); - Metoda służąca do pobrania wszystkich dostępnych danych pomiarowych dla danego sensora w postaci ArrayList tablicy String
