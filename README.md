@@ -4,7 +4,7 @@ API pobierające dane na temat jakości powietrza z WebService GIOŚ poprzez HTT
 
 API udostępnia metody umożliwiające automatyczne pobranie danych na temat jakości powietrza z serwisu Głównego Inspektoratu Ochrony Środowiska http://www.gios.gov.pl/pl/ 
 
-ReadMe w trakcie przygotowywania.
+ReadMe w trakcie przygotowywania, większość metod nieopisana.
 
 Główne udostępnione klasy i ich metody:
 
