@@ -11,14 +11,12 @@ Główne udostępnione klasy i ich metody:
 Stations - Klasa przechowująca dane na temat stacji pomiarowych, udostępniająca podstawowe metody get/set oraz metody dodatkowe służące do pobrania informacji dodatkowych o stacji
 Metody niestandardowe:
 
-getAllSensorsByHttp(); - Metoda pobierająca informacje o wszystkich dostępnych sensorach dla danej stacji pomiarowej 
+getAllSensorsByHttp(); - Metoda pobierająca informacje o wszystkich dostępnych sensorach dla danej stacji pomiarowej zagnieżdżająca pobrane dane w klasie Stations w postaci ArrayListy obiektów klas Sensors poprzez kompozycję
 
 Sensors - Klasa przechowująca dane na temat sensora danej stacji pomiarowej, udostępniająca podstawowe metody get/set oraz metody dodatkowe
 Metody niestandardowe:
 
-getDataByHttp(); - Metoda służąca do pobrania wszystkich dostępnych danych pomiarowych dla danego sensora
-
-Dane pobrane dla stacji pomiarowch przechowywane są w postaci ArrayList tablicy String
+getDataByHttp(); - Metoda służąca do pobrania wszystkich dostępnych danych pomiarowych dla danego sensora w postaci ArrayList tablicy String
 
 
 Metoda zwracająca ArrayList obiektów klasy Station wszystkich dostępnych na GIOŚ stacji pomiarowych
