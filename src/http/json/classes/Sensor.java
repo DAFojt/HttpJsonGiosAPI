@@ -1,4 +1,4 @@
-package Classes;
+package http.json.classes;
 
 import java.io.IOException;
 import java.util.ArrayList;

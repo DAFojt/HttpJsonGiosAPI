@@ -1,4 +1,4 @@
-package Tests;
+package http.json.tests;
 
 import java.awt.EventQueue;
 import java.io.IOException;
@@ -7,11 +7,11 @@ import java.util.Collections;
 
 import org.json.JSONException;
 
-import Classes.Station;
 import http.json.Frames.FrameData;
 import http.json.Frames.FrameSensors;
 import http.json.Frames.FrameStations;
 import http.json.GiosAPI.Getter;
+import http.json.classes.Station;
 
 public class API_Test_MAIN {
 

@@ -9,7 +9,7 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
-import Classes.Station;
+import http.json.classes.Station;
 
 public class FrameStations extends JFrame {
 
