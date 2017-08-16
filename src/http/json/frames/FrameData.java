@@ -23,7 +23,10 @@ public class FrameData extends JFrame {
 			Object[][] oData = new Object[data.size()][2];
 			for (int i = 0; i < data.size() - 1; i++) {
 				oData[i][0] = data.get(i)[0];
-				oData[i][1] = data.get(i)[1];
+				if(data.get(i)[1].compareTo("-1.0") != 0)
+					oData[i][1] = data.get(i)[1];
+				else
+					oData[i][1] = "NULL";
 			}
 
 			

@@ -27,13 +27,13 @@ public class API_Test_MAIN {
 		
 		
 		//Wybranie jednej z pobranych stacji pomiarowych o id z listy = 4
-		Station station = allStations.get(station_Id);
+		//Station station = allStations.get(station_Id);
 		
 		//Pobranie wszystkich dostêpnych sensorów dla danej stacji pomiarowej
-		station.getAllSensorsByHttp();
+		//station.getAllSensorsByHttp();
 		
 		//Pobranie danych pomiarowych dla wybranego sensora wybranej stacji pomiarowej
-		station.getSensor(sensor_Id).getDataByHttp();
+		//station.getSensor(sensor_Id).getDataByHttp();
 
 		EventQueue.invokeLater(new Runnable() {
 			@Override
