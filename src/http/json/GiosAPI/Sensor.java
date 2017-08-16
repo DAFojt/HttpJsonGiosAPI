@@ -1,4 +1,4 @@
-package http.json.nbp;
+package http.json.GiosAPI;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -72,7 +72,7 @@ public class Sensor {
 	
 	public void getDataByHttp() throws IOException, JSONException
 	{
-		data = getByDataId.getArrayListById(id);
+		data = GetByDataId.getArrayListById(id);
 	}
 	
 	

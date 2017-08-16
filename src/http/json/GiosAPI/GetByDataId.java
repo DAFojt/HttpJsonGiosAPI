@@ -1,4 +1,4 @@
-package http.json.nbp;
+package http.json.GiosAPI;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,14 +6,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class getByDataId {
+public class GetByDataId {
 	  public static ArrayList<String[]> getArrayListById(int id) throws IOException, JSONException
 	  {
-		  	readJsonFromURL jsonReader = new readJsonFromURL();
+		  	ReadJsonFromURL jsonReader = new ReadJsonFromURL();
 		  	
 		  	ArrayList<String[]> data = new ArrayList<String[]>();
 		  	String API_URL = "http://api.gios.gov.pl/pjp-api/rest/data/getData/" + id;
-	        JSONObject json = readJsonFromURL.readJsonFromUrl(API_URL);
+	        JSONObject json = ReadJsonFromURL.readJsonFromUrl(API_URL);
 	        
 	        JSONArray jsons = new JSONArray();
 	        String s[] = new String[json.length()+1];

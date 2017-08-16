@@ -1,4 +1,4 @@
-package http.json.nbp;
+package http.json.GiosAPI;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,14 +7,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class getBySensorId {
+public class GetBySensorId {
 
 	public static ArrayList<Sensor> getArrayListById(int id) throws IOException, JSONException {
-		readJsonFromURL jsonReader = new readJsonFromURL();
+		ReadJsonFromURL jsonReader = new ReadJsonFromURL();
 
 		ArrayList<Sensor> data = new ArrayList<Sensor>();
 		String API_URL = "http://api.gios.gov.pl/pjp-api/rest/station/sensors/" + id;
-		JSONArray json = readJsonFromURL.readJsonArrayFromUrl(API_URL);
+		JSONArray json = ReadJsonFromURL.readJsonArrayFromUrl(API_URL);
 
 		//System.out.println(json.toString());
 

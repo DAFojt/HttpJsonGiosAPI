@@ -1,4 +1,4 @@
-package http.json.nbp;
+package http.json.GiosAPI;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,13 +6,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class getByFindAll {
+public class GetByFindAll {
 	public static ArrayList<Station> getArrayListByFindAll() throws IOException, JSONException {
-		readJsonFromURL jsonReader = new readJsonFromURL();
+		ReadJsonFromURL jsonReader = new ReadJsonFromURL();
 
 		ArrayList<Station> data = new ArrayList<Station>();
 		String API_URL = "http://api.gios.gov.pl/pjp-api/rest/station/findAll";
-		JSONArray json = readJsonFromURL.readJsonArrayFromUrl(API_URL);
+		JSONArray json = ReadJsonFromURL.readJsonArrayFromUrl(API_URL);
 
 		System.out.println(json.toString());
 

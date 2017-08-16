@@ -1,4 +1,4 @@
-package http.json.nbp;
+package http.json.GiosAPI;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
@@ -7,9 +7,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 
-public class FrameByFindAll extends JFrame {
+public class FrameStations extends JFrame {
 
-	public FrameByFindAll(ArrayList<Station> data2) {
+	public FrameStations(ArrayList<Station> data2) {
 		super("Dostêpne stacje pomiarowe:");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
@@ -35,7 +35,7 @@ public class FrameByFindAll extends JFrame {
 
 		if (!data2.isEmpty()) {
 			JTable jData = new JTable(oData, columnNames);
-			jData.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+			//jData.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
 			add(new JScrollPane(jData, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 					JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
@@ -43,5 +43,4 @@ public class FrameByFindAll extends JFrame {
 			add(new JTextArea("Brak danych! Sprawdz LOGi"));
 
 	}
-
 }

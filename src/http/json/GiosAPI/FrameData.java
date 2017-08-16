@@ -1,4 +1,4 @@
-package http.json.nbp;
+package http.json.GiosAPI;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
@@ -7,9 +7,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 
-public class FrameById extends JFrame {
+public class FrameData extends JFrame {
 
-	public FrameById(ArrayList<String[]> data) {
+	public FrameData(ArrayList<String[]> data) {
 		super("Pomiary:");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
