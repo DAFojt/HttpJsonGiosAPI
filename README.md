@@ -9,6 +9,7 @@ ReadMe w trakcie przygotowywania, większość metod nieopisana.
 Główne udostępnione klasy i ich metody:
 
 Stations - Klasa przechowująca dane na temat stacji pomiarowych, udostępniająca podstawowe metody get/set oraz metody dodatkowe służące do pobrania informacji dodatkowych o stacji
+
 Metody niestandardowe:
 
 getAllSensorsByHttp(); - Metoda pobierająca informacje o wszystkich dostępnych sensorach dla danej stacji pomiarowej zagnieżdżająca pobrane dane w klasie Stations w postaci ArrayListy obiektów klas Sensors poprzez kompozycję
