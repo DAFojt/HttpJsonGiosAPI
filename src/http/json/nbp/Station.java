@@ -1,5 +1,10 @@
 package http.json.nbp;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import org.json.JSONException;
+
 public class Station {
 
 	private int id;
@@ -13,6 +18,8 @@ public class Station {
 	private String districtName;
 	private String provinceName;
 	private String adressStreet;
+	
+	private ArrayList sensors = new ArrayList();
 
 	public Station(int id, String stationName, double gegrLat, double gegrLon, int cityId, String cityName,
 			String communeName, String districtName, String provinceName, String adressStreet) {
@@ -27,6 +34,30 @@ public class Station {
 		this.districtName = districtName;
 		this.provinceName = provinceName;
 		this.adressStreet = adressStreet;
+	}
+	
+	public void addSensors(Station sensor)
+	{
+		sensors.add(sensor);
+	}
+	
+	public ArrayList getSensors() {
+		return sensors;
+	}
+	
+	public Sensor getSensor(int id)
+	{
+		return (Sensor) sensors.get(id);
+	}
+
+	public void setSensors(ArrayList sensors) {
+		this.sensors = sensors;
+	}
+	
+	public void getAllSensorsByHttp() throws IOException, JSONException
+	{
+		ArrayList<Sensor> data3 = getBySensorId.getArrayListById(id);
+		sensors = data3;
 	}
 
 	public int getId() {
