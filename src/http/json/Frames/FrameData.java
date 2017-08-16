@@ -1,11 +1,13 @@
-package http.json.GiosAPI;
+package http.json.Frames;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
+
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 
 public class FrameData extends JFrame {
 
@@ -30,8 +32,8 @@ public class FrameData extends JFrame {
 			JTable jData = new JTable(oData, columnNames);
 			//jData.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-			add(new JScrollPane(jData, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-					JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
+			add(new JScrollPane(jData, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+					ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED));
 		} else
 			add(new JTextArea("Brak danych! Sprawdz LOGi"));
 

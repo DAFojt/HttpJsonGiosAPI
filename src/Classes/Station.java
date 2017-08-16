@@ -1,11 +1,13 @@
-package http.json.GiosAPI;
+package Classes;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import org.json.JSONException;
 
-public class Station {
+import http.json.GiosAPI.Getter;
+
+public class Station implements Comparable<Station>{
 
 	private int id;
 	private String stationName;
@@ -56,7 +58,7 @@ public class Station {
 	
 	public void getAllSensorsByHttp() throws IOException, JSONException
 	{
-		ArrayList<Sensor> data3 = GetBySensorId.getArrayListById(id);
+		ArrayList<Sensor> data3 = Getter.getSensorsArrayListByStationId(id);
 		sensors = data3;
 	}
 
@@ -138,5 +140,10 @@ public class Station {
 
 	public void setAdressStreet(String adressStreet) {
 		this.adressStreet = adressStreet;
+	}
+
+	@Override
+	public int compareTo(Station station) {
+		return id - station.id;
 	}
 }

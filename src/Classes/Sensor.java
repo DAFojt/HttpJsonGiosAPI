@@ -1,9 +1,11 @@
-package http.json.GiosAPI;
+package Classes;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import org.json.JSONException;
+
+import http.json.GiosAPI.Getter;
 
 public class Sensor {
 	
@@ -72,10 +74,6 @@ public class Sensor {
 	
 	public void getDataByHttp() throws IOException, JSONException
 	{
-		data = GetByDataId.getArrayListById(id);
-	}
-	
-	
-	
-	
+		data = Getter.getDataArrayListBySensorId(id);
+	}	
 }
