@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import org.json.JSONException;
 
-import http.json.GiosAPI.Getter;
+import http.json.giosAPI.Getter;
 
 public class Station implements Comparable<Station>{
 
@@ -49,7 +49,11 @@ public class Station implements Comparable<Station>{
 	
 	public Sensor getSensor(int id)
 	{
-		return (Sensor) sensors.get(id);
+		if((id <= sensors.size()&& id >= 0))
+			return (Sensor) sensors.get(id);
+		else if(id > sensors.size())
+			return (Sensor) sensors.get(sensors.size()-1);
+		else return (Sensor) sensors.get(0);
 	}
 
 	public void setSensors(ArrayList sensors) {

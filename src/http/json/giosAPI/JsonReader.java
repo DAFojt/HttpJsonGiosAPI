@@ -1,4 +1,4 @@
-package http.json.GiosAPI;
+package http.json.giosAPI;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,6 +1,7 @@
-package http.json.Frames;
+package http.json.frames;
 
 import java.awt.GridLayout;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -9,13 +10,20 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
+import org.json.JSONException;
+
 import http.json.classes.Station;
+import http.json.giosAPI.Getter;
 
 public class FrameStations extends JFrame {
-
+	
+	JTable jData;
+	ArrayList<Station> allStations;
+	
 	public FrameStations(ArrayList<Station> data2) {
 		super("Dostêpne stacje pomiarowe:");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		allStations = data2;
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setVisible(true);
 		setSize(784, 900);
 
@@ -38,7 +46,7 @@ public class FrameStations extends JFrame {
 		}
 
 		if (!data2.isEmpty()) {
-			JTable jData = new JTable(oData, columnNames);
+			jData = new JTable(oData, columnNames);
 			//jData.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
 			add(new JScrollPane(jData, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
@@ -46,5 +54,33 @@ public class FrameStations extends JFrame {
 		} else
 			add(new JTextArea("Brak danych! Sprawdz LOGi"));
 
+		
+		
+		
+		jData.addMouseListener(new java.awt.event.MouseAdapter() {
+		    @Override
+		    public void mouseClicked(java.awt.event.MouseEvent evt) {
+				int row = jData.rowAtPoint(evt.getPoint());
+				int col = jData.columnAtPoint(evt.getPoint());
+				
+				if (row >= 0 && col >= 0) {
+					Station station = allStations.get(row);
+					try {
+						station.getAllSensorsByHttp();
+					} catch (IOException | JSONException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					new FrameSensors(station.getSensors());
+				}
+
+			}
+		});
+		
 	}
+	
+	
+	
+	
+	
 }

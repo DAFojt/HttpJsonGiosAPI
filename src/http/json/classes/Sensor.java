@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import org.json.JSONException;
 
-import http.json.GiosAPI.Getter;
+import http.json.giosAPI.Getter;
 
 public class Sensor {
 	
